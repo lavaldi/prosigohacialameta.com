@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.prosigohacialameta.com",
     title: "Prosigo hacia la meta",
   },
   plugins: [
@@ -10,27 +10,35 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "static/icon.png",
       },
     },
     "gatsby-plugin-mdx",
+    "gatsby-plugin-theme-ui",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "images",
+    //     path: "src/images/",
+    //   },
+    //   __key: "images",
+    // },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "pages",
+    //     path: "src/pages/",
+    //   },
+    //   __key: "pages",
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      }
     },
   ],
 };
