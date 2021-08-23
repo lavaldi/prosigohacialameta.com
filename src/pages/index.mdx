@@ -1,14 +1,31 @@
-export const wide = true;
+import { graphql } from "gatsby";
+import { ArticleList } from "../components/article-list.js";
 
 # Prosigo hacia la meta
 
 > No es que ya lo haya alcanzado o que ya haya llegado a ser perfecto, sino que sigo adelante, a fin de poder alcanzar aquello para lo cual también fui alcanzado por Cristo Jesús. Hermanos, yo mismo no considero haberlo ya alcanzado. Pero una cosa hago: olvidando lo que queda atrás y extendiéndome a lo que está delante, **prosigo hacia la meta** para obtener el premio del supremo llamamiento de Dios en Cristo Jesús. <br />
 > — Filipenses 3:12-14
 
-A veces el llamamiento a "seguir adelante", a "hacer la guerra al pecado" y a "buscar primero a Cristo y el reino" puede llegar a nuestros corazones con un tono legañoso... como si tuviéramos que probarnos a nosotros mismos o ganarnos más el favor de Dios... pero lo singular de este pasaje es que está atravesado por un feroz repudio al legalismo y a la justicia propia y a la búsqueda de cualquier cosa en nosotros para estar bien ante Dios. Pablo utiliza uno de los lenguajes más mordaces de todas sus cartas para condenar la justicia propia... y luego dice: "¡Prosigan con todo lo que hay en ustedes para alcanzar a Cristo!".
+## Últimos artículos
 
-La dependencia absoluta, desesperada y de todo corazón de la gracia de Dios en Cristo para TODA nuestra justicia y TODA nuestra esperanza no está reñida con la búsqueda celosa, viciosa y alegre de más de Dios en Cristo. Pablo presenta esta dicotomía evangelio-unión más claramente en 3:12, _"sigo adelante, a fin de poner alcanzar aquello (la vida de resurrección en la presencia de Cristo) para lo cual también fui alcanzado por Cristo Jesús"_. Esa es la clave: ...porque somos suyos, porque nuestro pecado ha sido matado, porque su justicia nos es contada por nuestra unión forjada por la gracia con Él, porque somos suyos, presionamos con todo lo que hay en nosotros para hacerlo nuestro, por así decirlo.
+<ArticleList posts={props.data.pages.nodes} prefix="blog/" />
 
-Así que... esta es la batalla diaria. Nuestros corazones y nuestras mentes son como pequeñas barcas que viajan corriente arriba en un poderoso río... Cuando dejamos de remar, empezamos a ir a la deriva, así es como funciona la física... Sin embargo, nuestros músculos para remar están alimentados por la gracia, y estamos atados por cuerdas carmesí al barco que nos precedió y que ahora está anclado de forma inamovible en las blancas orillas al final del viaje, y Él no dejará que los suyos se pierdan finalmente en la corriente.
-
-— [Full of Eyes](https://www.fullofeyes.com/project/philippians-312-14/)
+export const query = graphql`
+  query LastBlogPages {
+    pages: allMdx(
+      limit: 10
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
+    ) {
+      nodes {
+        id
+        slug
+        frontmatter {
+          title
+          date
+          draft
+        }
+      }
+    }
+  }
+`;

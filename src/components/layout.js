@@ -1,18 +1,11 @@
 /** @jsx jsx */
-import { jsx, Themed, useColorMode } from 'theme-ui'
+import { jsx, Themed, useColorMode, Box } from 'theme-ui'
 import { Link } from 'gatsby'
 import {
   FaTwitter as Twitter
 } from 'react-icons/fa'
 
-const modes = [
-  'light',
-  'black',
-  'dark',
-  'deep',
-  'hack',
-  'pink',
-]
+const modes = ['light', 'dark']
 
 const ColorButton = ({
   mode,
@@ -116,16 +109,20 @@ const Layout = props => {
           onClick={cycleMode}
         />
       </header>
-      <main
-        sx={{
-          width: '100%',
-          maxWidth: 'wide',
-          px: 3,
-          mx: 'auto',
-          flex: '1 1 auto',
-        }}>
-        {props.children}
-      </main>
+      <Box sx={{
+        px: [3, 4]
+      }}>
+        <main
+          sx={{
+            width: '100%',
+            maxWidth: 768,
+            px: 3,
+            mx: 'auto',
+            flex: '1 1 auto',
+          }}>
+          {props.children}
+        </main>
+      </Box>
       <footer
         sx={{
           px: 3,

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.prosigohacialameta.com",
+    siteUrl: "https://prosigohacialameta.com",
     title: "Prosigo hacia la meta",
   },
   plugins: [
