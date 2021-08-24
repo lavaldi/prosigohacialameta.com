@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Themed } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
-export const ArticleList = ({posts, prefix = ''}) => {
+export const ArticleList = ({ posts, prefix = '', as: Title = 'h2' }) => {
   return (
     <ul
       sx={{
@@ -13,7 +13,7 @@ export const ArticleList = ({posts, prefix = ''}) => {
       }}>
       {posts.map(post => (
         <li key={post.id}>
-          <Themed.h2 as='h2'>
+          <Title>
             <Link
               to={`${prefix}${post.slug}`}
               sx={{
@@ -21,7 +21,7 @@ export const ArticleList = ({posts, prefix = ''}) => {
               }}>
               {post.frontmatter.title}
             </Link>
-          </Themed.h2>
+          </Title>
           <div sx={{ variant: 'text.small', fontWeight: 'bold', }}>
             {new Date(post.frontmatter.date).toLocaleDateString()}
           </div>

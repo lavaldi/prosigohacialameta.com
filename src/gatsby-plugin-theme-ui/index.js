@@ -54,8 +54,11 @@ const theme = {
     },
     caps: {
       textTransform: 'uppercase',
-      letterSpacing: '0.2em',
+      letterSpacing: '0.1em',
     },
+  },
+  small: {
+    variant: 'text.small',
   },
   styles: {
     root: {
@@ -72,27 +75,27 @@ const theme = {
         color: 'secondary',
       }
     },
-    h1: {
-      variant: 'text.heading',
-      my: 6,
-    },
-    h2: {
-      variant: 'text.heading',
-      mt: 5,
-      mb: 3,
-    },
-    h3: {
-      fontSize: 2,
-    },
-    h4: {
-      variant: 'text.heading',
-    },
-    h5: {
-      variant: 'text.heading',
-    },
-    h6: {
-      variant: 'text.heading',
-    },
+    // h1: {
+    //   variant: 'text.heading',
+    //   my: 6,
+    // },
+    // h2: {
+    //   variant: 'text.heading',
+    //   mt: 5,
+    //   mb: 3,
+    // },
+    // h3: {
+    //   fontSize: 2,
+    // },
+    // h4: {
+    //   variant: 'text.heading',
+    // },
+    // h5: {
+    //   variant: 'text.heading',
+    // },
+    // h6: {
+    //   variant: 'text.heading',
+    // },
     img: {
       maxWidth: '100%',
       height: 'auto',
@@ -143,11 +146,6 @@ const theme = {
       my: 5,
       borderLeft: '4px solid',
     },
-    div: {
-      '&.footnotes': {
-        variant: 'text.small',
-      },
-    },
     navlink: {
       variant: 'text.caps',
       color: 'inherit',
@@ -161,6 +159,7 @@ const theme = {
       display: 'inline-flex',
       alignItems: 'center',
       fontWeight: 'bold',
+      letterSpacing: '0.2em',
     }
   }
 }
