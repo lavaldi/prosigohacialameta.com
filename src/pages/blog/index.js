@@ -61,40 +61,19 @@ const Blog = props => {
   return (
     <>
       <h1>Artículos</h1>
-      <div className="relative rounded-md shadow-sm max-w-lg mx-auto" sx={{
-        position: 'relative',
-        borderRadius: '0.375em',
-        boxShadow: '0 1px 2px 0 rgb(0 0 0 / 5%)',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        maxWidth: '32em'
-      }}>
-        <label htmlFor="search" sx={{
-          position: 'absolute',
-          width: '1px',
-          height: '1px',
-          padding: 0,
-          margin: '-1px',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          borderWidth: 0,
-        }}>
-          Search
-        </label>
-        <Input
-          autoComplete="off"
-          aria-labelledby="search"
-          type="search"
-          id="search"
-          value={query}
-          onChange={(event) => {
-            event.preventDefault()
-            navigate(event.target.value ? `/blog/?search=${event.target.value}` : '/blog')
-            setQuery(event.target.value)
-          }}
-          placeholder="Search posts"
-        />
-      </div>
+      <Input
+        autoComplete="off"
+        aria-labelledby="search"
+        type="search"
+        id="search"
+        value={query}
+        onChange={(event) => {
+          event.preventDefault()
+          navigate(event.target.value ? `/blog/?search=${event.target.value}` : '/blog')
+          setQuery(event.target.value)
+        }}
+        placeholder="Search posts"
+      />
       <ArticleList posts={searchParam.length > 0 ? resultPosts : posts} />
     </>
   )

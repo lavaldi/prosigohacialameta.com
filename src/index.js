@@ -4,13 +4,17 @@ import get from 'lodash.get'
 import Layout from './components/layout'
 
 const Page = props => {
+  console.log(props);
   let title = 'Prosigo hacia la meta'
-  const postTitle = get(props.data, 'post.title',
+  let siteUrl = 'https://prosigohacialameta.com'
+
+  const postTitle = get(props.data?.mdx, 'frontmatter.title',
     get(props, 'pageContext.frontmatter.title')
-  )
-  const description = get(props.data, 'post.excerpt',
+  ) || 'Blog'
+  const description = get(props.data?.mdx, 'frontmatter.excerpt',
     get(props, 'pageContext.frontmatter.excerpt')
-  ) || 'The writing of Claudia Valdivieso'
+  ) || 'Artículos de vida cristiana por Claudia Valdivieso'
+  const image = get(props.data?.mdx, 'frontmatter.banner', '/avatar.jpg')
 
   if (postTitle) {
     title = `${postTitle} | ${title}`
@@ -20,7 +24,7 @@ const Page = props => {
     <>
     <Helmet
       htmlAttributes={{
-        lang: 'en-us',
+        lang: 'es-pe',
       }}>
         <link
           rel='icon'
@@ -35,15 +39,19 @@ const Page = props => {
           rel='canonical'
           href={props.location.href}
         />
-        <meta name='twitter:site' content='@prosigohacialameta' />
-        <meta name='og:image' content='/avatar.jpg' />
         <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="image" content={image} />
+        <meta property="og:url" content={siteUrl + props.uri} />
         <meta name='og:title' content={title} />
         <meta name='og:description' content={description} />
+        <meta name='og:image' content={image} />
+        <meta name='twitter:site' content='@prosigohacialameta' />
+        <meta name='twitter:creator' content='lavaldi_' />
+        <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={description} />
-        <meta name='twitter:creator' content='Claudia Valdivieso' />
-        <meta name='twitter:card' content='summary' />
+        <meta name="twitter:image" content={image} />
       </Helmet>
       <Layout {...props}>
         {props.children}

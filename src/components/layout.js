@@ -180,7 +180,7 @@ const Layout = props => {
               variant: 'styles.navitem',
               mr: 4,
             }}>
-            About
+            Acerca de
           </Themed.a>
           <div sx={{ mx: 'auto' }} />
           <div sx={{ my: 2 }}>© {date.getFullYear()} Claudia Valdivieso</div>
