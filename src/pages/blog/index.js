@@ -55,7 +55,7 @@ const Blog = props => {
 
   const [query, setQuery] = useState(searchParam);
   
-  const result = fuse.search(searchParam)
+  const result = fuse.search(`'${searchParam}`)
   const resultPosts = result.map(res => res.item)
 
   return (
