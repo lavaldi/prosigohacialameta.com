@@ -4,7 +4,6 @@ import get from 'lodash.get'
 import Layout from './components/layout'
 
 const Page = props => {
-  console.log(props);
   let title = 'Prosigo hacia la meta'
   let siteUrl = 'https://prosigohacialameta.com'
 
