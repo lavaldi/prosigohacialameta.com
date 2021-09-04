@@ -2,7 +2,8 @@
 import { jsx, Themed, useColorMode, Box } from 'theme-ui'
 import { Link } from 'gatsby'
 import {
-  FaTwitter as Twitter
+  FaInstagram as Instagram,
+  FaFacebook as Facebook
 } from 'react-icons/fa'
 
 const modes = ['light', 'dark']
@@ -138,14 +139,21 @@ const Layout = props => {
             justifyContent: 'center',
           }}>
           <a
-            href='https://twitter.com/prosigohacialameta'
-            title='Twitter'
+            href='https://instagram.com/prosigohacialameta'
+            title='Instagram'
             sx={{
               variant: 'styles.navitem',
-              ml: 2,
               mr: 3,
             }}>
-            <Twitter size={24} />
+            <Instagram size={24} />
+          </a>
+          <a
+            href='https://facebook.com/prosigohacialametacom'
+            title='Facebook'
+            sx={{
+              variant: 'styles.navitem',
+            }}>
+            <Facebook size={24} />
           </a>
         </div>
         <div
