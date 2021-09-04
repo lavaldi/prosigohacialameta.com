@@ -13,7 +13,8 @@ const Page = props => {
   const description = get(props.data?.mdx, 'frontmatter.excerpt',
     get(props, 'pageContext.frontmatter.excerpt')
   ) || 'Artículos de vida cristiana por Claudia Valdivieso'
-  const image = get(props.data?.mdx, 'frontmatter.banner', '/prosigo-hacia-la-meta.png')
+  const defaultImage = `${siteUrl}/prosigo-hacia-la-meta.png`
+  const image = get(props.data?.mdx, 'frontmatter.banner', defaultImage)
 
   if (postTitle) {
     title = `${postTitle} | ${title}`
