@@ -13,7 +13,7 @@ const Page = props => {
   const description = get(props.data?.mdx, 'frontmatter.excerpt',
     get(props, 'pageContext.frontmatter.excerpt')
   ) || 'Artículos de vida cristiana por Claudia Valdivieso'
-  const image = get(props.data?.mdx, 'frontmatter.banner', '/avatar.jpg')
+  const image = get(props.data?.mdx, 'frontmatter.banner', '/prosigo-hacia-la-meta.png')
 
   if (postTitle) {
     title = `${postTitle} | ${title}`
@@ -45,8 +45,7 @@ const Page = props => {
         <meta name='og:title' content={title} />
         <meta name='og:description' content={description} />
         <meta name='og:image' content={image} />
-        <meta name='twitter:site' content='@prosigohacialameta' />
-        <meta name='twitter:creator' content='lavaldi_' />
+        <meta name='twitter:creator' content='@lavaldi_' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={description} />
