@@ -9,7 +9,7 @@ const Page = props => {
 
   const postTitle = get(props.data?.mdx, 'frontmatter.title',
     get(props, 'pageContext.frontmatter.title')
-  ) || 'Blog'
+  ) ?? 'Blog'
   const description = get(props.data?.mdx, 'frontmatter.excerpt',
     get(props, 'pageContext.frontmatter.excerpt')
   ) || 'Artículos de vida cristiana por Claudia Valdivieso'
