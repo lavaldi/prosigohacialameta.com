@@ -2,15 +2,23 @@ import React from 'react'
 import { Flex, Box, Avatar, Paragraph } from 'theme-ui'
 import authors from './authors'
 
-export const Author = ({ authorKey }) => {
-  const author = authors[authorKey];
+export const Author = ({ authorKey, author: passedAuthor }) => {
+  let author;
+
+  if (authorKey) {
+    author = authors[authorKey];
+  }
+
+  if (passedAuthor) {
+    author = passedAuthor;
+  }
 
   if (!author) return null
 
   return (
     <>
     <hr />
-    <Flex pt={3}>
+    <Flex pt={3} pb={3}>
       <Box sx={{ flex: '1 1 48px' }}>
         <Avatar src={author.avatar} alt={author.name} />
       </Box>

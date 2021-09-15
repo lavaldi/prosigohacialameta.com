@@ -117,12 +117,12 @@ const theme = {
       fontFamily: 'monospace',
       color: 'secondary',
     },
-    hr: {
-      border: 0,
-      my: 4,
-      borderBottom: '1px solid',
-      borderColor: 'muted',
-    },
+    // hr: {
+    //   border: 0,
+    //   my: 4,
+    //   borderBottom: '1px solid',
+    //   borderColor: 'muted',
+    // },
     table: {
       width: '100%',
       borderCollapse: 'separate',
