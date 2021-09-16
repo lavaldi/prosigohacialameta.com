@@ -7,7 +7,8 @@ const Page = props => {
   let title = 'Prosigo hacia la meta'
   let siteUrl = 'https://prosigohacialameta.com'
 
-  const url = siteUrl + props.uri;
+  const uri = props.data?.mdx?.slug ? `/blog/${props.data?.mdx?.slug}` : ''
+  const url = siteUrl + uri;
   const isBlogPost = !!props.data?.mdx
 
   const postTitle = get(props.data?.mdx, 'frontmatter.title',
@@ -83,7 +84,7 @@ const Page = props => {
         />
         <link
           rel='canonical'
-          href={props.location.href}
+          href={url}
         />
         <title>{title}</title>
         <meta name="description" content={description} />
