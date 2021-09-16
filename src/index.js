@@ -12,7 +12,7 @@ const Page = props => {
   ) ?? 'Blog'
   const description = get(props.data?.mdx, 'frontmatter.excerpt',
     get(props, 'pageContext.frontmatter.excerpt')
-  ) || 'Artículos de vida cristiana por Claudia Valdivieso'
+  ) || 'Artículos de vida cristiana, devocionales y recursos bíblicos'
   const defaultImage = `${siteUrl}/prosigo-hacia-la-meta.png`
   const image = get(props.data?.mdx, 'frontmatter.banner', defaultImage)
 
