@@ -42,6 +42,7 @@ const Page = props => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl + props.uri} />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
