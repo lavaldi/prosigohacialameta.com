@@ -43,9 +43,9 @@ const Page = props => {
         <meta name="description" content={description} />
         <meta name="image" content={image} />
         <meta property="og:url" content={siteUrl + props.uri} />
-        <meta name='og:title' content={title} />
-        <meta name='og:description' content={description} />
-        <meta name='og:image' content={image} />
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={description} />
+        <meta property='og:image' content={image} />
         <meta name='twitter:creator' content='@lavaldi_' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content={title} />
