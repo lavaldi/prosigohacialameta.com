@@ -7,6 +7,9 @@ const Page = props => {
   let title = 'Prosigo hacia la meta'
   let siteUrl = 'https://prosigohacialameta.com'
 
+  const url = siteUrl + props.uri;
+  const isBlogPost = !!props.data?.mdx
+
   const postTitle = get(props.data?.mdx, 'frontmatter.title',
     get(props, 'pageContext.frontmatter.title')
   ) ?? 'Blog'
@@ -18,6 +21,49 @@ const Page = props => {
 
   if (postTitle) {
     title = `${postTitle} | ${title}`
+  }
+
+  const schemaOrgJSONLD = [
+    {
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
+      url,
+      name: title,
+      alternateName: title,
+    },
+  ]
+
+  if (isBlogPost) {
+    schemaOrgJSONLD.push(
+      {
+        '@context': 'http://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            item: {
+              '@id': url,
+              name: title,
+              image,
+            },
+          },
+        ],
+      },
+      {
+        '@context': 'http://schema.org',
+        '@type': 'BlogPosting',
+        url,
+        name: title,
+        alternateName: title,
+        headline: title,
+        image: {
+          '@type': 'ImageObject',
+          url: image,
+        },
+        description,
+      }
+    )
   }
 
   return (
@@ -42,13 +88,16 @@ const Page = props => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={siteUrl + props.uri} />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
         <meta property='og:image' content={image} />
-        <meta name='twitter:creator' content='@lavaldi_' />
         <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:creator' content='@lavaldi_' />
         <meta name='twitter:title' content={title} />
         <meta name='twitter:description' content={description} />
         <meta name="twitter:image" content={image} />
