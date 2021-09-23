@@ -56,6 +56,7 @@ export const query = graphql`
         date(formatString: "MMMM D, YYYY")
         draft
         banner
+        excerpt
       }
       body
     }
