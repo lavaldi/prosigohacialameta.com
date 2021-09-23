@@ -19,10 +19,14 @@ export const Author = ({ authorKey, author: passedAuthor }) => {
     <>
     <hr />
     <Flex pt={3} pb={3}>
-      <Box sx={{ flex: '1 1 48px' }}>
-        <Avatar src={author.avatar} alt={author.name} />
-      </Box>
-      <Box ml={3}  sx={{width: 'calc(100% - 48px)'}}>
+      {
+        author.avatar
+          ? <Box mr={3} sx={{ flex: '1 1 48px' }}>
+            <Avatar src={author.avatar} alt={author.name} />
+          </Box>
+          : null
+      }
+      <Box sx={{width: 'calc(100% - 48px)'}}>
         <Paragraph sx={{ fontStyle: 'italic' }}>{author.description}</Paragraph>
       </Box>
     </Flex>
