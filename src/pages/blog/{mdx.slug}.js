@@ -19,7 +19,7 @@ const Draft = () => (
 const BlogPost = ({ data }) => {
   const title = data.mdx.frontmatter.title
   let date = data.mdx.frontmatter.date
-  if (date) date = new Date(date).toLocaleDateString('en-US', {
+  if (date) date = new Date(date).toLocaleDateString('es-PE', {
     timeZone: 'UTC',
   })
   const draft = data.mdx.frontmatter.draft

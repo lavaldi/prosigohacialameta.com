@@ -23,7 +23,9 @@ export const ArticleList = ({ posts, prefix = '', as: Title = 'h2' }) => {
             </Link>
           </Title>
           <div sx={{ variant: 'text.small', fontWeight: 'bold', }}>
-            {new Date(post.frontmatter.date).toLocaleDateString()}
+            {new Date(post.frontmatter.date).toLocaleDateString('es-PE', {
+              timeZone: 'UTC',
+            })}
           </div>
         </li>
       ))}
