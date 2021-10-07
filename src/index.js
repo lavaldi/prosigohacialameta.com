@@ -14,9 +14,13 @@ const Page = props => {
   const postTitle = get(props.data?.mdx, 'frontmatter.title',
     get(props, 'pageContext.frontmatter.title')
   ) ?? 'Blog'
-  const description = get(props.data?.mdx, 'frontmatter.excerpt',
-    get(props, 'pageContext.frontmatter.excerpt')
-  ) || 'Artículos de vida cristiana, devocionales y recursos bíblicos'
+  const descriptionPost =
+    get(props.data?.mdx, "frontmatter.excerpt") ??
+    get(props.data?.mdx, "excerpt");
+  const description = isBlogPost
+    ? descriptionPost
+    : get(props, "pageContext.frontmatter.excerpt") ??
+      "Artículos de vida cristiana, devocionales y recursos bíblicos";
   const defaultImage = `${siteUrl}/prosigo-hacia-la-meta.png`
   const image = get(props.data?.mdx, 'frontmatter.banner', defaultImage)
 
