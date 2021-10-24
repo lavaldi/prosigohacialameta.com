@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import * as React from "react";
 import { jsx, Link as TLink, Box } from "theme-ui"
 import { Link } from "gatsby"
 import ItemTags from "./item-tags"
