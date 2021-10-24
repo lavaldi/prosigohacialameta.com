@@ -132,6 +132,10 @@ const theme = merge(tailwind, {
     hr: {
       mx: 0,
     },
+    img: {
+      maxWidth: "100%",
+      height: "auto",
+    },
   },
   layout: {
     container: {
