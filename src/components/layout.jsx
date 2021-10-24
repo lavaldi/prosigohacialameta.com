@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import * as React from "react"
-import { Global } from "@emotion/react"
-import { Box, Container, jsx } from "theme-ui"
-import Seo from "./seo"
-import Header from "./header"
-import Footer from "./footer"
-import SkipNavLink from "./skip-nav"
+import * as React from "react";
+import { Global } from "@emotion/react";
+import { Box, Container, jsx } from "theme-ui";
+import Seo from "./seo";
+import Header from "./header";
+import Footer from "./footer";
+import SkipNavLink from "./skip-nav";
 
 const Layout = ({ children, className = `` }) => (
   <>
     <Global
-      styles={theme => ({
+      styles={(theme) => ({
         "*": {
           boxSizing: `inherit`,
         },
@@ -47,6 +47,6 @@ const Layout = ({ children, className = `` }) => (
       <Footer />
     </Container>
   </>
-)
+);
 
-export default Layout
+export default Layout;

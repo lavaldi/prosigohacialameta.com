@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
-import Layout from "./layout"
-import Title from "./title"
-import Listing from "./listing"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import useSiteMetadata from "../hooks/use-site-metadata"
-import replaceSlashes from "../utils/replace-slashes"
-import Hero from "../texts/hero"
+import { jsx } from "theme-ui";
+import { Link } from "gatsby";
+import Layout from "./layout";
+import Title from "./title";
+import Listing from "./listing";
+import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import useSiteMetadata from "../hooks/use-site-metadata";
+import replaceSlashes from "../utils/replace-slashes";
+import Hero from "../texts/hero";
 
 const Homepage = ({ posts }) => {
-  const { basePath, blogPath } = useMinimalBlogConfig()
-  const { siteTitle } = useSiteMetadata()
+  const { basePath, blogPath } = useMinimalBlogConfig();
+  const { siteTitle } = useSiteMetadata();
 
   return (
     <Layout>
@@ -47,7 +47,7 @@ const Homepage = ({ posts }) => {
       </Title>
       <Listing posts={posts} showTags={false} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

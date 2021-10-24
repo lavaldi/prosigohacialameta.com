@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import { jsx, useColorMode, Flex } from "theme-ui"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import ColorModeToggle from "./color-mode-toggle"
-import Navigation from "./navigation"
-import HeaderTitle from "./header-title"
-import HeaderExternalLinks from "./header-external-links"
+import { jsx, useColorMode, Flex } from "theme-ui";
+import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import ColorModeToggle from "./color-mode-toggle";
+import Navigation from "./navigation";
+import HeaderTitle from "./header-title";
+import HeaderExternalLinks from "./header-external-links";
 
 const Header = () => {
-  const { navigation: nav } = useMinimalBlogConfig()
-  const [colorMode, setColorMode] = useColorMode()
-  const isDark = colorMode === `dark`
-  const toggleColorMode = e => {
-    e.preventDefault()
-    setColorMode(isDark ? `light` : `dark`)
-  }
+  const { navigation: nav } = useMinimalBlogConfig();
+  const [colorMode, setColorMode] = useColorMode();
+  const isDark = colorMode === `dark`;
+  const toggleColorMode = (e) => {
+    e.preventDefault();
+    setColorMode(isDark ? `light` : `dark`);
+  };
 
   return (
     <header sx={{ mb: [5, 6] }}>
@@ -38,7 +38,7 @@ const Header = () => {
         <HeaderExternalLinks />
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

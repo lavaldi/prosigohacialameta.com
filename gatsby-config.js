@@ -59,16 +59,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Prosigo hacia la meta`,
+        short_name: `Prosigo hacia la meta`,
+        description: `Artículos de vida cristiana, devocionales y recursos bíblicos.`,
         start_url: `/`,
         background_color: `#fff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         theme_color: `#6943ff`,
         display: `standalone`,
-        // TODO: generate these icons
         icons: [
           {
             src: `/android-chrome-192x192.png`,

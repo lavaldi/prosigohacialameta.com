@@ -1,11 +1,11 @@
-import * as React from "react"
-import { Link as TLink } from "theme-ui"
-import { Link } from "gatsby"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import replaceSlashes from "../utils/replace-slashes"
+import * as React from "react";
+import { Link as TLink } from "theme-ui";
+import { Link } from "gatsby";
+import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import replaceSlashes from "../utils/replace-slashes";
 
 const ItemTags = ({ tags }) => {
-  const { tagsPath, basePath } = useMinimalBlogConfig()
+  const { tagsPath, basePath } = useMinimalBlogConfig();
 
   return (
     <>
@@ -21,7 +21,7 @@ const ItemTags = ({ tags }) => {
         </React.Fragment>
       ))}
     </>
-  )
-}
+  );
+};
 
-export default ItemTags
+export default ItemTags;

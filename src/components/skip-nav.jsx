@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "theme-ui";
 
 const skipNavStyles = {
   border: 0,
@@ -23,7 +23,7 @@ const skipNavStyles = {
     clip: `auto`,
     textDecoration: `none`,
   },
-}
+};
 
 const SkipNavLink = ({ children, ...props }) => (
   <a
@@ -34,6 +34,6 @@ const SkipNavLink = ({ children, ...props }) => (
   >
     {children}
   </a>
-)
+);
 
-export default SkipNavLink
+export default SkipNavLink;

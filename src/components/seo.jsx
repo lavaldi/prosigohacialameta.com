@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { withPrefix } from "gatsby"
-import useSiteMetadata from "../hooks/use-site-metadata"
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { withPrefix } from "gatsby";
+import useSiteMetadata from "../hooks/use-site-metadata";
 
 const Seo = ({
   title = ``,
@@ -11,7 +11,7 @@ const Seo = ({
   children = null,
   canonicalUrl = ``,
 }) => {
-  const site = useSiteMetadata()
+  const site = useSiteMetadata();
 
   const {
     siteTitle,
@@ -21,14 +21,14 @@ const Seo = ({
     siteLanguage,
     siteImage: defaultImage,
     author,
-  } = site
+  } = site;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     url: `${siteUrl}${pathname || ``}`,
     image: `${siteUrl}${image || defaultImage}`,
-  }
+  };
   return (
     <Helmet
       title={title}
@@ -51,6 +51,7 @@ const Seo = ({
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:image:alt" content={seo.description} />
       <meta name="twitter:creator" content={author} />
+      <link rel="icon" type="favicon" href={withPrefix(`/favicon.ico`)} />
       <link
         rel="icon"
         type="image/png"
@@ -71,7 +72,7 @@ const Seo = ({
       {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
       {children}
     </Helmet>
-  )
-}
+  );
+};
 
-export default Seo
+export default Seo;

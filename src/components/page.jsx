@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Heading } from "theme-ui"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Layout from "./layout"
-import Seo from "./seo"
+import { jsx, Heading } from "theme-ui";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import Layout from "./layout";
+import Seo from "./seo";
 
 const Page = ({ data: { page } }) => (
   <Layout>
@@ -14,6 +14,6 @@ const Page = ({ data: { page } }) => (
       <MDXRenderer>{page.body}</MDXRenderer>
     </section>
   </Layout>
-)
+);
 
-export default Page
+export default Page;

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import * as React from "react";
-import { jsx, Link as TLink, Box } from "theme-ui"
-import { Link } from "gatsby"
-import ItemTags from "./item-tags"
+import { jsx, Link as TLink, Box } from "theme-ui";
+import { Link } from "gatsby";
+import ItemTags from "./item-tags";
 
 const BlogListItem = ({ post, showTags = true }) => (
   <Box mb={4}>
@@ -26,6 +26,6 @@ const BlogListItem = ({ post, showTags = true }) => (
       )}
     </p>
   </Box>
-)
+);
 
-export default BlogListItem
+export default BlogListItem;

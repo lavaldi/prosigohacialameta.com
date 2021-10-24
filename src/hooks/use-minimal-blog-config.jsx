@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby";
 
 const useMinimalBlogConfig = () => {
   const data = useStaticQuery(graphql`
@@ -21,9 +21,9 @@ const useMinimalBlogConfig = () => {
         showCopyButton
       }
     }
-  `)
+  `);
 
-  return data.minimalBlogConfig
-}
+  return data.minimalBlogConfig;
+};
 
-export default useMinimalBlogConfig
+export default useMinimalBlogConfig;

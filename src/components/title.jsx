@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
+import { jsx, Box } from "theme-ui";
 
 const Title = ({ text, children, as = `h2`, className = `` }) => (
   <div
@@ -40,6 +40,6 @@ const Title = ({ text, children, as = `h2`, className = `` }) => (
       {children}
     </div>
   </div>
-)
+);
 
-export default Title
+export default Title;

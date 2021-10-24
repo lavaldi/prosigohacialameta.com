@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import { Link } from "gatsby"
-import { jsx } from "theme-ui"
-import replaceSlashes from "../utils/replace-slashes"
-import useSiteMetadata from "../hooks/use-site-metadata"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
+import { Link } from "gatsby";
+import { jsx } from "theme-ui";
+import replaceSlashes from "../utils/replace-slashes";
+import useSiteMetadata from "../hooks/use-site-metadata";
+import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 
 const HeaderTitle = () => {
-  const { siteTitle } = useSiteMetadata()
-  const { basePath } = useMinimalBlogConfig()
+  const { siteTitle } = useSiteMetadata();
+  const { basePath } = useMinimalBlogConfig();
 
   return (
     <Link
@@ -19,7 +19,7 @@ const HeaderTitle = () => {
         {siteTitle}
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default HeaderTitle
+export default HeaderTitle;

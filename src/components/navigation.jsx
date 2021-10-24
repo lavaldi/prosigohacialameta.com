@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import * as React from "react"
-import { jsx, Link as TLink } from "theme-ui"
-import { Link } from "gatsby"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import replaceSlashes from "../utils/replace-slashes"
+import * as React from "react";
+import { jsx, Link as TLink } from "theme-ui";
+import { Link } from "gatsby";
+import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import replaceSlashes from "../utils/replace-slashes";
 
 function AsLink(props) {
-  return <Link activeClassName="active" {...props} />
+  return <Link activeClassName="active" {...props} />;
 }
 
 const Navigation = ({ nav }) => {
-  const { basePath } = useMinimalBlogConfig()
+  const { basePath } = useMinimalBlogConfig();
 
   return (
     <>
@@ -22,7 +22,7 @@ const Navigation = ({ nav }) => {
             ".active": { color: `heading` },
           }}
         >
-          {nav.map(item => (
+          {nav.map((item) => (
             <TLink
               key={item.slug}
               as={AsLink}
@@ -34,7 +34,7 @@ const Navigation = ({ nav }) => {
         </nav>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

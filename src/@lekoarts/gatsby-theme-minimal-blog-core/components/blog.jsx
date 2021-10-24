@@ -1,10 +1,10 @@
-import * as React from "react"
-import Blog from "../../../components/blog"
+import * as React from "react";
+import Blog from "../../../components/blog";
 
 export default function MinimalBlogCoreBlog({ ...props }) {
   const {
     data: { allPost },
-  } = props
+  } = props;
 
-  return <Blog posts={allPost.nodes} {...props} />
+  return <Blog posts={allPost.nodes} {...props} />;
 }
