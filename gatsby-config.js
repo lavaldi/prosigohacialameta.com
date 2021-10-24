@@ -10,7 +10,31 @@ module.exports = {
     author: `@lavaldi_`,
   },
   plugins: [
-    `@lekoarts/gatsby-theme-minimal-blog-core`,
+    {
+      resolve: `@lekoarts/gatsby-theme-minimal-blog-core`,
+      options: {
+        navigation: [
+          {
+            title: `Blog`,
+            slug: `/blog`,
+          },
+          {
+            title: `About`,
+            slug: `/about`,
+          },
+        ],
+        externalLinks: [
+          {
+            name: `Instagram`,
+            url: `https://instagram.com/prosigohacialameta`,
+          },
+          {
+            name: `Facebook`,
+            url: `https://facebook.com/prosigohacialametacom`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-theme-ui`,
@@ -77,9 +101,9 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allPost } }) =>
-              allPost.nodes.map(post => {
-                const url = site.siteMetadata.siteUrl + post.slug
-                const content = `<p>${post.excerpt}</p><div style="margin-top: 50px; font-style: italic;"><strong><a href="${url}">Keep reading</a>.</strong></div><br /> <br />`
+              allPost.nodes.map((post) => {
+                const url = site.siteMetadata.siteUrl + post.slug;
+                const content = `<p>${post.excerpt}</p><div style="margin-top: 50px; font-style: italic;"><strong><a href="${url}">Keep reading</a>.</strong></div><br /> <br />`;
 
                 return {
                   title: post.title,
@@ -88,7 +112,7 @@ module.exports = {
                   url,
                   guid: url,
                   custom_elements: [{ "content:encoded": content }],
-                }
+                };
               }),
             query: `
               {
@@ -109,4 +133,4 @@ module.exports = {
       },
     },
   ],
-}
+};
