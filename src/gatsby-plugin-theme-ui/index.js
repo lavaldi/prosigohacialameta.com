@@ -1,167 +1,217 @@
-const theme = {
-  initialColorModeName: 'light',
+import { merge } from "theme-ui";
+import { transparentize } from "@theme-ui/color";
+import { tailwind } from "@theme-ui/presets";
+
+const theme = merge(tailwind, {
+  initialColorModeName: `light`,
+  config: {
+    useCustomProperties: true,
+  },
   colors: {
-    text: '#000',
-    background: '#fff',
-    primary: 'hsl(264, 100%, 75%)',
-    secondary: 'hsl(266, 79%, 47%)',
-    accent: 'hsl(320, 100%, 50%)',
-    muted: '#af6e6e',
-    gray: '#444',
+    primary: tailwind.colors.purple[7],
+    secondary: `#5f6c80`,
+    toggleIcon: tailwind.colors.gray[8],
+    heading: tailwind.colors.black,
+    divide: tailwind.colors.gray[4],
     modes: {
       dark: {
-        text: '#fff',
-        background: 'hsl(230,25%,18%)',
-        primary: 'hsl(260, 100%, 80%)',
-        secondary: 'hsl(290, 100%, 80%)',
-        highlight: 'hsl(260, 20%, 40%)',
-        accent: 'hsl(290, 100%, 80%)',
-        muted: 'hsla(230, 20%, 0%, 20%)',
-        gray: 'hsl(210, 50%, 60%)',
+        text: tailwind.colors.gray[4],
+        primary: tailwind.colors.purple[5],
+        secondary: `#7f8ea3`,
+        toggleIcon: tailwind.colors.gray[4],
+        background: `#1A202C`,
+        heading: tailwind.colors.white,
+        divide: tailwind.colors.gray[8],
+        muted: tailwind.colors.gray[8],
       },
-    }
+    },
   },
   fonts: {
-    body: 'system-ui, sans-serif',
-  },
-  lineHeights: {
-    body: 1.625,
-    heading: 1.25,
-  },
-  fontWeights: {
-    body: 400,
-    heading: 800,
-    bold: 700,
-  },
-  fontSizes: [
-    14, 16, 18, 20, 24, 32, 48, 64, 72, 96
-  ],
-  sizes: {
-    container: 768,
-    wide: 1280,
-  },
-  text: {
-    heading: {
-      fontSize: 2,
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em',
-      my: 2,
-    },
-    small: {
-      fontSize: 0,
-    },
-    caps: {
-      textTransform: 'uppercase',
-      letterSpacing: '0.1em',
-    },
-  },
-  small: {
-    variant: 'text.small',
+    body: `"IBM Plex Sans", -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`,
   },
   styles: {
     root: {
-      fontFamily: 'body',
-      lineHeight: 'body',
-      fontSize: 2,
-      transitionProperty: 'background-color',
-      transitionTimingFunction: 'ease-out',
-      transitionDuration: '.4s',
+      color: `text`,
+      backgroundColor: `background`,
+      margin: 0,
+      padding: 0,
+      boxSizing: `border-box`,
+      textRendering: `optimizeLegibility`,
+      WebkitFontSmoothing: `antialiased`,
+      MozOsxFontSmoothing: `grayscale`,
     },
-    a: {
-      color: 'primary',
-      ':hover,:focus': {
-        color: 'secondary',
-      }
+    p: {
+      fontSize: [1, 1, 2],
+      letterSpacing: `-0.003em`,
+      lineHeight: `body`,
+      "--baseline-multiplier": 0.179,
+      "--x-height-multiplier": 0.35,
+      wordBreak: `break-word`,
     },
-    // h1: {
-    //   variant: 'text.heading',
-    //   my: 6,
-    // },
-    // h2: {
-    //   variant: 'text.heading',
-    //   mt: 5,
-    //   mb: 3,
-    // },
-    // h3: {
-    //   fontSize: 2,
-    // },
-    // h4: {
-    //   variant: 'text.heading',
-    // },
-    // h5: {
-    //   variant: 'text.heading',
-    // },
-    // h6: {
-    //   variant: 'text.heading',
-    // },
-    img: {
-      maxWidth: '100%',
-      height: 'auto',
+    ul: {
+      li: {
+        fontSize: [1, 1, 2],
+        letterSpacing: `-0.003em`,
+        lineHeight: `body`,
+        "--baseline-multiplier": 0.179,
+        "--x-height-multiplier": 0.35,
+      },
     },
-    pre: {
-      fontFamily: 'monospace',
+    ol: {
+      li: {
+        fontSize: [1, 1, 2],
+        letterSpacing: `-0.003em`,
+        lineHeight: `body`,
+        "--baseline-multiplier": 0.179,
+        "--x-height-multiplier": 0.35,
+      },
+    },
+    h1: {
+      variant: `text.heading`,
+      fontSize: [5, 6, 6, 7],
+      mt: 4,
+    },
+    h2: {
+      variant: `text.heading`,
+      fontSize: [4, 5, 5, 6],
+      mt: 4,
+    },
+    h3: {
+      variant: `text.heading`,
+      fontSize: [3, 4, 4, 5],
+      mt: 4,
+    },
+    h4: {
+      variant: `text.heading`,
+      fontSize: [2, 3, 3, 4],
+      mt: 3,
+    },
+    h5: {
+      variant: `text.heading`,
+      fontSize: [1, 2, 2, 3],
+      mt: 3,
+    },
+    h6: {
+      variant: `text.heading`,
       fontSize: 1,
-      bg: 'muted',
-      p: 3,
-      borderRadius: 8,
-      overflowX: 'auto',
-      variant: 'prism',
-    },
-    code: {
-      fontFamily: 'monospace',
-      color: 'secondary',
-    },
-    inlineCode: {
-      fontFamily: 'monospace',
-      color: 'secondary',
-    },
-    // hr: {
-    //   border: 0,
-    //   my: 4,
-    //   borderBottom: '1px solid',
-    //   borderColor: 'muted',
-    // },
-    table: {
-      width: '100%',
-      borderCollapse: 'separate',
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: 'left',
-      py: 2,
-      borderBottomStyle: 'solid',
-    },
-    td: {
-      textAlign: 'left',
-      py: 2,
-      borderBottom: '1px solid',
-      borderColor: 'muted',
+      mb: 2,
     },
     blockquote: {
-      fontStyle: 'italic',
+      borderLeftColor: `primary`,
+      borderLeftStyle: `solid`,
+      borderLeftWidth: `6px`,
       mx: 0,
-      px: 3,
-      my: 5,
-      borderLeft: '4px solid',
+      pl: 4,
+      p: {
+        fontStyle: `italic`,
+      },
     },
-    navlink: {
-      variant: 'text.caps',
-      color: 'inherit',
-      textDecoration: 'none',
-      ':hover,:focus': {
-        color: 'primary',
-      }
+    table: {
+      width: `100%`,
+      my: 4,
+      borderCollapse: `separate`,
+      borderSpacing: 0,
+      [[`th`, `td`]]: {
+        textAlign: `left`,
+        py: `4px`,
+        pr: `4px`,
+        pl: 0,
+        borderColor: `muted`,
+        borderBottomStyle: `solid`,
+      },
     },
-    navitem: {
-      variant: 'styles.navlink',
-      display: 'inline-flex',
-      alignItems: 'center',
-      fontWeight: 'bold',
-      letterSpacing: '0.2em',
-    }
-  }
-}
+    th: {
+      verticalAlign: `bottom`,
+      borderBottomWidth: `2px`,
+      color: `heading`,
+    },
+    td: {
+      verticalAlign: `top`,
+      borderBottomWidth: `1px`,
+    },
+    hr: {
+      mx: 0,
+    },
+    img: {
+      maxWidth: "100%",
+      height: "auto",
+    },
+  },
+  layout: {
+    container: {
+      padding: [3, 4],
+      maxWidth: `1024px`,
+    },
+  },
+  text: {
+    heading: {
+      fontFamily: `heading`,
+      fontWeight: `heading`,
+      lineHeight: `heading`,
+      color: `heading`,
+    },
+  },
+  copyButton: {
+    backgroundColor: transparentize(`primary`, 0.8),
+    border: `none`,
+    color: `gray.2`,
+    cursor: `pointer`,
+    fontSize: [`14px`, `14px`, `16px`],
+    fontFamily: `body`,
+    letterSpacing: `0.025rem`,
+    transition: `default`,
+    "&[disabled]": {
+      cursor: `not-allowed`,
+    },
+    ":not([disabled]):hover": {
+      bg: `primary`,
+      color: `white`,
+    },
+    position: `absolute`,
+    top: 0,
+    right: 0,
+    zIndex: 1,
+    borderRadius: `0 0 0 0.25rem`,
+    padding: `0.25rem 0.6rem`,
+  },
+  dividers: {
+    bottom: {
+      borderBottomStyle: `solid`,
+      borderBottomWidth: `1px`,
+      borderBottomColor: `divide`,
+      pb: 3,
+    },
+    top: {
+      borderTopStyle: `solid`,
+      borderTopWidth: `1px`,
+      borderTopColor: `divide`,
+      pt: 3,
+    },
+  },
+  links: {
+    secondary: {
+      color: `secondary`,
+      textDecoration: `none`,
+      ":hover": {
+        color: `heading`,
+        textDecoration: `underline`,
+      },
+      ":focus": {
+        color: `heading`,
+      },
+    },
+    listItem: {
+      fontSize: [1, 2, 3],
+      color: `text`,
+    },
+  },
+  images: {
+    avatar: {
+      width: 100,
+      height: 100,
+      borderRadius: 99999,
+    },
+  },
+});
 
 export default theme;
