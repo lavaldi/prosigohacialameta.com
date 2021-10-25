@@ -19,7 +19,7 @@ module.exports = {
             slug: `/blog`,
           },
           {
-            title: `About`,
+            title: `Nosotros`,
             slug: `/about`,
           },
         ],
