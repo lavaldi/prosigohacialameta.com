@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Flex, Box, Avatar, Paragraph } from "theme-ui";
+import { Flex, Box, Avatar, Paragraph, Divider, Text } from "theme-ui";
 import authors from "./authors";
 
 export const Author = ({ authorKey, author: passedAuthor }) => {
@@ -17,15 +17,25 @@ export const Author = ({ authorKey, author: passedAuthor }) => {
 
   return (
     <>
-      <hr />
+      <Divider />
       <Flex pt={3} pb={3}>
         {author.avatar ? (
-          <Box mr={3} sx={{ flex: "1 1 48px" }}>
+          <Box mr={3} sx={{ flex: "1 1 100" }}>
             <Avatar src={author.avatar} alt={author.name} />
           </Box>
         ) : null}
-        <Box sx={{ width: "calc(100% - 48px)" }}>
-          <Paragraph sx={{ fontStyle: "italic" }}>
+        <Box sx={{ width: `calc(100% - ${author.avatar ? 100 : 0}px)` }}>
+          <Paragraph>
+            <Text
+              sx={{
+                fontSize: 3,
+                fontWeight: "bold",
+              }}
+            >
+              Escrito por {author.name}
+            </Text>
+          </Paragraph>
+          <Paragraph sx={{ fontStyle: "italic", fontSize: [1, 1, 2] }}>
             {author.description}
           </Paragraph>
         </Box>

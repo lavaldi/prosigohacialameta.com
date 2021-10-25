@@ -205,6 +205,13 @@ const theme = merge(tailwind, {
       color: `text`,
     },
   },
+  images: {
+    avatar: {
+      width: 100,
+      height: 100,
+      borderRadius: 99999,
+    },
+  }
 });
 
 export default theme;

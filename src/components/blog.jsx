@@ -23,13 +23,6 @@ const Blog = ({ posts }) => {
         <Heading as="h1" variant="styles.h1" sx={{ marginY: 2 }}>
           Blog
         </Heading>
-        <TLink
-          as={Link}
-          sx={{ variant: `links.secondary`, marginY: 2 }}
-          to={replaceSlashes(`/${basePath}/${tagsPath}`)}
-        >
-          Ver todos los tags
-        </TLink>
       </Flex>
       <Listing posts={posts} sx={{ mt: [4, 5] }} />
     </Layout>
