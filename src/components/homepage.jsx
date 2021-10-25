@@ -40,9 +40,9 @@ const Homepage = ({ posts }) => {
       >
         <Hero />
       </section>
-      <Title text="Latest Posts">
+      <Title text="Últimos artículos">
         <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>
-          Todos los posts
+          Todos los artículos
         </Link>
       </Title>
       <Listing posts={posts} showTags={false} />

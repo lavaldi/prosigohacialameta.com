@@ -211,7 +211,7 @@ const theme = merge(tailwind, {
       height: 100,
       borderRadius: 99999,
     },
-  }
+  },
 });
 
 export default theme;
