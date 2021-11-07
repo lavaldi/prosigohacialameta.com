@@ -1,15 +1,10 @@
 /** @jsx jsx */
-import { jsx, Heading, Link as TLink, Flex } from "theme-ui";
-import { Link } from "gatsby";
+import { jsx, Heading, Flex } from "theme-ui";
 import Layout from "./layout";
 import Listing from "./listing";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
-import replaceSlashes from "../utils/replace-slashes";
 import Seo from "./seo";
 
 const Blog = ({ posts }) => {
-  const { tagsPath, basePath } = useMinimalBlogConfig();
-
   return (
     <Layout>
       <Seo title="Blog" />
