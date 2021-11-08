@@ -29,6 +29,7 @@ const Seo = ({
     url: `${siteUrl}${pathname || ``}`,
     image: `${siteUrl}${image || defaultImage}`,
   };
+
   return (
     <Helmet
       title={title}
