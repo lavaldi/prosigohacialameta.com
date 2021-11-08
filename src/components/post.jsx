@@ -14,7 +14,13 @@ const Post = ({ data: { post } }) => (
     <Seo
       title={post.title}
       description={post.description ? post.description : post.excerpt}
-      image={post.banner ? post.banner.childImageSharp.resize.src : undefined}
+      image={
+        post.banner
+          ? post.banner.indexOf("https://") === 0
+            ? post.banner
+            : post.banner.childImageSharp.resize.src
+          : undefined
+      }
       pathname={post.slug}
       canonicalUrl={post.canonicalUrl}
     />
