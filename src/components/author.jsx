@@ -20,7 +20,7 @@ export const Author = ({ authorKey, author: passedAuthor }) => {
       <Divider />
       <Flex pt={3} pb={3}>
         {author.avatar ? (
-          <Box mr={3} sx={{ flex: "1 1 100" }}>
+          <Box mr={3} sx={{ flex: "1 1 100px", height: "100px", overflow: "hidden", borderRadius: 99999 }}>
             <Avatar src={author.avatar} alt={author.name} />
           </Box>
         ) : null}

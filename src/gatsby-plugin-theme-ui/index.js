@@ -208,8 +208,7 @@ const theme = merge(tailwind, {
   images: {
     avatar: {
       width: 100,
-      height: 100,
-      borderRadius: 99999,
+      height: 'auto',
     },
   },
 });
