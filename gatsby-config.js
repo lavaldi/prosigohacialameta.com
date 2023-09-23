@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `Prosigo hacia la meta`,
-    siteTitleAlt: `Prosigo hacia la meta - Artículos de vida cristiana, devocionales y recursos bíblicos`,
-    siteHeadline: `Prosigo hacia la meta - Artículos de vida cristiana, devocionales y recursos bíblicos`,
-    siteUrl: `https://prosigohacialameta.com`,
+    siteTitle: `Coram Deo`,
+    siteTitleAlt: `Coram Deo - Artículos de vida cristiana, devocionales y recursos bíblicos`,
+    siteHeadline: `Coram Deo - Artículos de vida cristiana, devocionales y recursos bíblicos`,
+    siteUrl: `https://coram-deo.lavaldi.com`,
     siteDescription: `Artículos de vida cristiana, devocionales y recursos bíblicos.`,
     siteLanguage: `en`,
     siteImage: `/banner.png`,
@@ -59,8 +59,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Prosigo hacia la meta`,
-        short_name: `Prosigo hacia la meta`,
+        name: `Coram Deo`,
+        short_name: `Coram Deo`,
         description: `Artículos de vida cristiana, devocionales y recursos bíblicos.`,
         start_url: `/`,
         background_color: `#fff`,
@@ -126,7 +126,7 @@ module.exports = {
               }
             `,
             output: `rss.xml`,
-            title: `Prosigo hacia la meta - Artículos de vida cristiana, devocionales y recursos bíblicos`,
+            title: `Coram Deo - Artículos de vida cristiana, devocionales y recursos bíblicos`,
           },
         ],
       },

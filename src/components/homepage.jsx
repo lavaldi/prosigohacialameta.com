@@ -7,7 +7,6 @@ import Listing from "./listing";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 import useSiteMetadata from "../hooks/use-site-metadata";
 import replaceSlashes from "../utils/replace-slashes";
-import Hero from "../texts/hero";
 
 const Homepage = ({ posts }) => {
   const { basePath, blogPath } = useMinimalBlogConfig();
@@ -31,15 +30,6 @@ const Homepage = ({ posts }) => {
       >
         {siteTitle}
       </h1>
-      <section
-        sx={{
-          mb: [5, 6],
-          p: { fontSize: [1, 2, 3], mt: 2 },
-          variant: `section_hero`,
-        }}
-      >
-        <Hero />
-      </section>
       <Title text="Últimos artículos">
         <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>
           Todos los artículos
